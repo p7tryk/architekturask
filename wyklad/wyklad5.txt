@@ -1,0 +1,38 @@
+2019-03-28
+
+
+CLSA
+dodawanie rownolegle + opoznienie kilku multiplexerow
+
+VCLSA
+krotsze szeregowe wczesniej zeby opoznienie multiplexerow zgadzalo sie z nastepnym szeregowym
+
+
+
+
+U2
+zamiana liczby u2
+
+00100111   (+39)
+XOR (zamiana wszystkich cyfr)
+11111111
+---------
++
+00000001
+---------
+11011001   (-39)
+
+
+
+zamiast odejmowac, dodawac liczbe przeciwna
+
+by odjac
+XOR na wejsciu jednej liczby i dostajemy carry +1 na poczatku
+
+
+overflow w u2
+kiedy przeniesienie w wyniku na 2 ostatnich bitach sa rozne
+
+
+----------------------------------------------------------------------
+architektura

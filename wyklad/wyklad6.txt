@@ -1,0 +1,33 @@
+2019-04-09
+
+register to register	R-type
+register to immidiate	I-type
+unconditional jump	J-type
+conditional jump
+
+
+
+
+MIPS
+R-type
+6bit opcode(all zero) | 5bit source 1 register | 5 bit source 2 register | 5bit destination register | 5bit bitshift| 6bit instruction
+
+addu $t0 ,$s1 ,$s2
+000000 10001 10010 01000 00000 100001
+
+//disregard
+li $s1 #g
+li $s2 #h
+li $s3 #i
+li $s4 #j
+//
+
+
+and or xor nor
+
+
+
+I-type
+6bit opcode | 5bit destination | 5bit source | 16bit value
+
+
