@@ -1,0 +1,47 @@
+2019-04-11
+
+J-type
+
+unconditional jump
+
+6 bit opcode | 26bit adress
+
+  branching
+
+beq	
+branch eq or not eq
+
+
+
+adresowanie natychmiastowe
+	    operand jest stala
+
+adresowanie rejstrowe
+	    operand jest w rejestrze
+	    
+bazowe z przesunieciem
+	operand jest rejest + offset
+
+
+adresowanie wzgledem licznika program counter
+	    operand offset+pc
+
+
+adesowanie pseudobezposrednie
+	   26bit adress po bajtach
+
+
+//TODO
+okreslanie wydajnosci architektury
+
+
+//ENDTODO
+
+
+ARCHITEKTURA JEDNOCYKLOWA
+//help movfuscator and reductio toolchain chris domas
+
+
+load from memory 6 krokow w jednocyclowym
+
+fun project implement cpu
