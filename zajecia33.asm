@@ -22,57 +22,65 @@ ORG 100h
     NapisRownasie DB " = $"
     NapisNL       DB 13,10,'$'
 
-    Dana1         EQU 1001
-    Dana2         EQU 45
+	Dana1         EQU 1001
+	Dana2         EQU 45
+	Dana3		EQU 3
 addaxcx:
+	
 	ret
 
 	
 Program:
-	napisznak DB " / $"
+	napisznak DB " % $"
+	napisznak2 DB " * $"
 	call printequation
 	mov dx, 0
 	mov ax, dana1
 	mov cx, dana2
 	div cx
+	mov ax, dx
 	call printax
 
-	mov dx, offset napisnl
-	call print
-	
-	mov bx, offset napisznak+1
-	mov al, '*'
-	mov [bx],al
-	call printequation
-	mov ax, dana1
-	mov cx, dana2
-	mul cx
-	call printax
-	
 	mov dx, offset napisnl
 	call print
 	
 	mov bx, offset napisznak+1
 	mov al, '+'
 	mov [bx],al
-	call printequation
-	mov ax, dana1
-	mov cx, dana2
-	add ax,cx
+	mov bx, offset napisznak2+1
+	mov al, '*'
+	mov [bx],al
+	call printequation2
+	
+	mov ax, dana2
+	mov cx, dana3
+	mul cx
+	add ax, dana1
 	call printax
 
-	
 	mov dx, offset napisnl
 	call print
 	
+	
+
 	mov bx, offset napisznak+1
 	mov al, '-'
 	mov [bx],al
-	call printequation
-	mov ax, dana1
-	mov cx, dana2
-	sub ax,cx
+	mov bx, offset napisznak2+1
+	mov al, '/'
+	mov [bx],al
+	call printequation2
+
+	mov dx, 0
+	mov ax, dana2
+	mov cx, dana3
+	div cx
+
+	mov bx, dana1
+	sub bx, ax
+	mov ax,bx
 	call printax
+
 	
 	MOV AH, 4Ch
 	INT 21h
@@ -85,6 +93,25 @@ printequation:
 	call print
 
 	mov ax, dana2
+	call printax
+
+	mov dx, offset napisrownasie
+	call print
+	ret
+printequation2:
+	mov ax, dana1
+	call printax
+	
+	mov dx, offset napisznak
+	call print
+
+	mov ax, dana2
+	call printax
+
+	mov dx, offset napisznak2
+	call print
+
+	mov ax, dana3
 	call printax
 
 	mov dx, offset napisrownasie
