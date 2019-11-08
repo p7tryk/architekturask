@@ -39,7 +39,7 @@ Program:
 	mov cx, dana2
 	div cx
 	mov ax, dx
-	call printax
+	call printaxnumber
 
 	mov dx, offset napisnl
 	call print
@@ -56,7 +56,7 @@ Program:
 	mov cx, dana3
 	mul cx
 	add ax, dana1
-	call printax
+	call printaxnumber
 
 	mov dx, offset napisnl
 	call print
@@ -79,7 +79,7 @@ Program:
 	mov bx, dana1
 	sub bx, ax
 	mov ax,bx
-	call printax
+	call printaxnumber
 
 	
 	MOV AH, 4Ch
@@ -87,32 +87,32 @@ Program:
 	ret
 printequation:
 	mov ax, dana1
-	call printax
+	call printaxnumber
 	
 	mov dx, offset napisznak
 	call print
 
 	mov ax, dana2
-	call printax
+	call printaxnumber
 
 	mov dx, offset napisrownasie
 	call print
 	ret
 printequation2:
 	mov ax, dana1
-	call printax
+	call printaxnumber
 	
 	mov dx, offset napisznak
 	call print
 
 	mov ax, dana2
-	call printax
+	call printaxnumber
 
 	mov dx, offset napisznak2
 	call print
 
 	mov ax, dana3
-	call printax
+	call printaxnumber
 
 	mov dx, offset napisrownasie
 	call print
@@ -122,7 +122,7 @@ print:
 	INT 21h
 	ret
 
-printax:
+printaxnumber:
 	MOV BX, OFFSET Buffer
 	CALL Proc_itoa
 	mov dx, bx
